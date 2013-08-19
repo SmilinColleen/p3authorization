@@ -1,1 +1,0 @@
-# Solution for Challenge: 3. Sinatra: Authentication and Authorization. Started 2013-08-13T05:39:44+00:00
