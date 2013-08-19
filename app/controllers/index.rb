@@ -15,12 +15,18 @@ end
 
 post '/sessions' do
   # sign-in
-
+  user = User.authenticate(params[:email], params[:password])
+  if user == nil
+    redirect '/sessions/new'
+  else
+    session[:user_id] = user.id
+    redirect '/'
+  end
 end
 
 delete '/sessions/:id' do
-
   # sign-out -- invoked via AJAX
+  session[:user_id] = nil
 end
 
 #----------- USERS -----------
